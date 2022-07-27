@@ -1,0 +1,13 @@
+/* Layar HP */
+@media all and (max-width:670px) {
+    .navbarkanan {
+        display: none;
+    }
+    .menuikon {
+        display:block;
+    }
+}
+
+/*untuk tablet */
+@media all and (max-width: 1000px) {
+}

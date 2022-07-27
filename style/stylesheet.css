@@ -1,0 +1,53 @@
+body {
+    margin:0;
+    font-family: "Verdana";
+}
+
+header {
+    height: 65px;
+    width: 100%;
+    background-color:rgba(215, 171, 88, 0.56);
+    position: fixed;
+    top: 0;
+    z-index: 12; /* penempatan header ada diatas 12 elemen */
+}
+
+.logo {
+    width: 65px;
+    height: auto;
+    margin-left: 15px;
+}
+
+.navbarkiri {
+    float: left;
+}
+
+.navbarkanan {
+    float: right;
+    margin-right: -5px;
+}
+
+.navbarkanan a {
+    line-height:65px;
+    padding: 0 25px;
+    color: antiquewhite;
+    display: block;
+    float: left;
+    transition: all 0.5s;
+}
+
+.navbarkanan a:hover {
+    background-color: rgba(105, 70, 6, 0.655);
+}
+
+text#navbar {
+    margin: 20px autopx;
+}
+
+.menuikon {
+    color: white;
+    float: right;
+    font-size: 25px;
+    padding: 17px 10px;  
+    display: none;  
+  }
