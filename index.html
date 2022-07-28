@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/carousel.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
     <style>
         body,
@@ -48,16 +49,61 @@
     </div>
 
     <!-- Header with image -->
-    <header class="bgimg proa3-display-container proa3-grayscale-min" id="home">
-        <div class="proa3-display-bottomleft proa3-center proa3-padding-large proa3-hide-small">
-            <span class="proa3-tag">Open from 6am to 5pm</span>
+    <header class="proa3-display-container proa3-grayscale-min" id="home">
+        <div style="padding-top: 55px;">
+            <div class="mySlides fade">
+                <img src="images/4.jpg" style="width:100%;">
+                <div class="proa3-display-bottomleft proa3-center proa3-padding-large proa3-hide-small">
+                    <span class="proa3-tag">Open from 6am to 5pm</span>
+                </div>
+                <div class="proa3-display-middle proa3-center">
+                    <span class="proa3-text-carousel"><strong>Cafe Du Nou</strong></span>
+                </div>
+                <div class="proa3-display-bottomright proa3-center proa3-padding-large">
+                    <span class="proa3-text-white">Jl. K.H. Mas Mansyur, Kb. Melati, Kecamatan Tanah Abang, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10230</span>
+                </div>
+            </div>
+            <div class="mySlides fade">
+                <img src="images/2.jpg" style="width:100%">
+                <div class="proa3-display-bottomleft proa3-center proa3-padding-large proa3-hide-small">
+                    <span class="proa3-tag">Open from 6am to 5pm</span>
+                </div>
+                <div class="proa3-display-middle proa3-center">
+                    <span class="proa3-text-carousel"><strong>Cafe Du Nou</strong></span>
+                </div>
+                <div class="proa3-display-bottomright proa3-center proa3-padding-large">
+                    <span class="proa3-text-white">Jl. K.H. Mas Mansyur, Kb. Melati, Kecamatan Tanah Abang, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10230</span>
+                </div>
+            </div>
+            <div class="mySlides fade">
+                <img src="images/1.jpg" style="width:100%">
+                <div class="proa3-display-bottomleft proa3-center proa3-padding-large proa3-hide-small">
+                    <span class="proa3-tag">Open from 6am to 5pm</span>
+                </div>
+                <div class="proa3-display-middle proa3-center">
+                    <span class="proa3-text-carousel"><strong>Cafe Du Nou</strong></span>
+                </div>
+                <div class="proa3-display-bottomright proa3-center proa3-padding-large">
+                    <span class="proa3-text-white">Jl. K.H. Mas Mansyur, Kb. Melati, Kecamatan Tanah Abang, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10230</span>
+                </div>
+            </div>
         </div>
-        <div class="proa3-display-middle proa3-center">
-            <span class="proa3-text-white" style="font-size:90px"><strong>Cafe Du Nou</strong></span>
+        <div style="text-align:center;">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
         </div>
-        <div class="proa3-display-bottomright proa3-center proa3-padding-large">
-            <span class="proa3-text-white">Jl. K.H. Mas Mansyur, Kb. Melati, Kecamatan Tanah Abang, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10230</span>
-        </div>
+
+
+<!--        <div class="proa3-display-bottomleft proa3-center proa3-padding-large proa3-hide-small">-->
+<!--            <span class="proa3-tag">Open from 6am to 5pm</span>-->
+<!--        </div>-->
+<!--        <div class="proa3-display-middle proa3-center">-->
+<!--            <span class="proa3-text-white" style="font-size:90px"><strong>Cafe Du Nou</strong></span>-->
+<!--        </div>-->
+<!--        <div class="proa3-display-bottomright proa3-center proa3-padding-large">-->
+<!--            <span class="proa3-text-white">Jl. K.H. Mas Mansyur, Kb. Melati, Kecamatan Tanah Abang, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10230</span>-->
+<!--        </div>-->
     </header>
 
     <!-- Add a background color and large text to the whole page -->
@@ -180,6 +226,27 @@
             evt.currentTarget.firstElementChild.className += " proa3-dark-grey";
         }
         document.getElementById("myLink").click();
+
+        // Carousel
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
     </script>
 
 </body>
