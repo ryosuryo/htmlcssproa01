@@ -1645,7 +1645,7 @@ a {
 
 .w3-black,
 .w3-hover-black:hover {
-    color: #fff !important;
+    color: rgb(254, 254, 254) !important;
     background-color: #000 !important
 }
 
